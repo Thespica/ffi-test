@@ -19,7 +19,6 @@ include_directories("src/test/native")
 find_package(gar REQUIRED)
 include_directories(SYSTEM ${GAR_INCLUDE_DIR})
 
-#set(GAR_SRC_DIR "graphar-src")
 # Add FlatBuffers directly to our build. This defines the `flatbuffers` target.
 #add_subdirectory(${GAR_SRC_DIR}
 #                 ${CMAKE_CURRENT_BINARY_DIR}/build
@@ -31,6 +30,7 @@ include_directories(SYSTEM ${GAR_INCLUDE_DIR})
 
 add_library(${LIBNAME} SHARED ${SOURCES})
 target_link_libraries(${LIBNAME} ${CMAKE_JNI_LINKER_FLAGS} gar)
+# linking gar dynamic library
 find_library(GAR_LIBRARY gar)
 target_link_libraries(garffitest ${GAR_LIBRARY})
 
