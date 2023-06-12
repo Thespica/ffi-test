@@ -2,11 +2,10 @@
 Add JAVA SDK for GraphAr with FastFFI: If we do it successfully, 
 we can consider that it proof the concept:
 
-- wright `InfoVersion` class by FastFFI, including two method:
+- write `InfoVersion` class by FastFFI, including two method:
    - `InfoVersion Factory.creat(int version)`
    - `int version()`
-- getcall
-its right number by calling `version()` method.
+- get right number by calling `version()` method.
 
 ---
 
