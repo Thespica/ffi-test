@@ -1,5 +1,14 @@
 # Proof Of Concept 
-Add JAVA SDK for GraphAr with FastFFI
+Add JAVA SDK for GraphAr with FastFFI: If we do it successfully, 
+we can consider that it proof the concept:
+
+- wright `InfoVersion` class by FastFFI, including two method:
+   - `InfoVersion Factory.creat(int version)`
+   - `int version()`
+- getcall
+its right number by calling `version()` method.
+
+---
 
 Require cmake 3.1, LLVM 11 and JDK 8.
 
