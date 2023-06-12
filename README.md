@@ -27,9 +27,8 @@ Require cmake 3.1, LLVM 11 and JDK 8.
     export LLVM11_HOME=<path-to-LLVM11-home>
     mvn clean package
     ```
-   
-error:
-```error
+   If remove all test, `mvn clean package` will success. But it will meet error with test:
+```shell
 [INFO] Running com.alibaba.graphar.utils.InfoVersionTest
 [ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.045 s <<< FAILURE! - in com.alibaba.graphar.
 utils.InfoVersionTest
@@ -117,7 +116,6 @@ at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.ja
 at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
 at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
 at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
-
 ```
     
 4. How to run test?
