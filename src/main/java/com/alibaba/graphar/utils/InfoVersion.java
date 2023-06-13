@@ -9,7 +9,7 @@ import static com.alibaba.graphar.utils.CppHeaderName.GRAPH_INFO_H;
 @CXXHead(GRAPH_INFO_H)
 @FFITypeAlias(GAR_INFO_VERSION)
 public interface InfoVersion extends FFIPointer {
-    static InfoVersion creat(int version) {
+    static InfoVersion create(int version) {
         return factory.create(version);
     }
 
