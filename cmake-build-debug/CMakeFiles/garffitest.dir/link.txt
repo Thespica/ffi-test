@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC  -O3 -g -std=c++17 -Wall -g  -shared -Wl,-soname,libgarffitest.so -o libgarffitest.so CMakeFiles/garffitest.dir/target/generated-sources/annotations/jni_com_alibaba_graphar_utils_InfoVersion_cxx_0xfe2b75b6.cc.o  -Wl,-rpath,/usr/local/lib /usr/local/lib/libgar.so /usr/local/lib/libgar.so 
