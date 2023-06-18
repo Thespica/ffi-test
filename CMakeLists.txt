@@ -7,32 +7,18 @@ file(GLOB SOURCES "target/generated-sources/annotations/*.cc" "target/generated-
 
 set(LIBNAME "garffitest")
 
-set(THREADS_PREFER_PTHREAD_FLAG ON)
 set(JAVA_AWT_LIBRARY NotNeeded)
 set(JAVA_AWT_INCLUDE_PATH NotNeeded)
 find_package(JNI REQUIRED)
+find_package(gar REQUIRED)
 include_directories(SYSTEM ${JAVA_INCLUDE_PATH})
 include_directories(SYSTEM ${JAVA_INCLUDE_PATH2})
+
 include_directories("src/main/native")
 include_directories("src/test/native")
 
-find_package(gar REQUIRED)
-include_directories(SYSTEM ${GAR_INCLUDE_DIR})
-
-# Add FlatBuffers directly to our build. This defines the `flatbuffers` target.
-#add_subdirectory(${GAR_SRC_DIR}
-#                 ${CMAKE_CURRENT_BINARY_DIR}/build
-#                 EXCLUDE_FROM_ALL)
-
-# Now simply link against flatbuffers as needed to your already declared target.
-# The flatbuffers target carry header search path automatically if CMake > 2.8.11.
-#target_link_libraries(own_project_target PRIVATE flatbuffers)
-
 add_library(${LIBNAME} SHARED ${SOURCES})
 target_link_libraries(${LIBNAME} ${CMAKE_JNI_LINKER_FLAGS} gar)
-# linking gar dynamic library
-find_library(GAR_LIBRARY gar)
-target_link_libraries(garffitest ${GAR_LIBRARY})
 
 set_target_properties(${LIBNAME} PROPERTIES LINKER_LANGUAGE CXX)
 

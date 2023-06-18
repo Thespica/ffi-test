@@ -17,6 +17,7 @@ mkdir -p build
 pushd build
 cmake ..
 make -j`nproc`
+sudo make install
 
 popd
 popd
